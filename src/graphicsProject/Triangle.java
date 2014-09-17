@@ -41,22 +41,24 @@ public class Triangle {
 	}
 	
 	public void render(GL2 gl){
-		gl.glColor3d(100, 100, 100);
-//		gl.glEnable(GL.GL_TEXTURE_2D);
-//		texture.getGLTexture().setTexParameteri(gl, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
-//		texture.getGLTexture().setTexParameteri(gl, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
-//		texture.getGLTexture().bind(gl);
-		
+		gl.glColor3f(0.1f, 0.2f, 0.3f);
+		gl.glEnable(GL.GL_TEXTURE_2D);
+		texture.getGLTexture().setTexParameteri(gl, GL.GL_TEXTURE_WRAP_S, GL.GL_REPEAT);
+		texture.getGLTexture().setTexParameteri(gl, GL.GL_TEXTURE_WRAP_T, GL.GL_REPEAT);
+		texture.getGLTexture().setTexParameteri(gl, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR);
+		texture.getGLTexture().setTexParameteri(gl, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
+		texture.getGLTexture().bind(gl);
+		gl.glBegin(GL.GL_TRIANGLES);
 		for(int ii = 0; ii < 3; ii++){
-			//gl.glTexCoord2f(
-			//		vertices[ii].getTextureCoord(Dimension.X), 
-			//		vertices[ii].getTextureCoord(Dimension.Y));
+			gl.glTexCoord2f(
+					vertices[ii].getTextureCoord(Dimension.X), 
+					vertices[ii].getTextureCoord(Dimension.Y));
 			gl.glVertex3f(
 					vertices[ii].getCoord(Dimension.X), 
-					vertices[ii].getCoord(Dimension.X), 
-					vertices[ii].getCoord(Dimension.X));
+					vertices[ii].getCoord(Dimension.Y), 
+					vertices[ii].getCoord(Dimension.Z));
 		}
-		
+		gl.glEnd();
 	}
 
 	public TriangleTexture getTexture() {

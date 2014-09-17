@@ -21,8 +21,8 @@ public class Camera implements Entity {
 		cameraFocusPosition[0] += x;
 		cameraFocusPosition[1] += y;
 		cameraFocusPosition[2] += z;
-		System.out.println("Camera position " + Float.toString(cameraPosition[0]) + " " + Float.toString(cameraPosition[1]) + " " + Float.toString(cameraPosition[2]));
-		System.out.println("Camera focus " + Float.toString(cameraFocusPosition[0]) + " " + Float.toString(cameraFocusPosition[1]) + " " + Float.toString(cameraFocusPosition[2]));
+//		System.out.println("Camera position " + Float.toString(cameraPosition[0]) + " " + Float.toString(cameraPosition[1]) + " " + Float.toString(cameraPosition[2]));
+//		System.out.println("Camera focus " + Float.toString(cameraFocusPosition[0]) + " " + Float.toString(cameraFocusPosition[1]) + " " + Float.toString(cameraFocusPosition[2]));
 	}
 
 	public float[] getCameraDirection() {

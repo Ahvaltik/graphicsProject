@@ -35,12 +35,10 @@ public class DrawableNode implements Entity {
 		gl.glTranslatef(getTranslationVector()[0], getTranslationVector()[1], getTranslationVector()[2]);
 		gl.glRotatef(getRotationVector()[0], getRotationVector()[1], getRotationVector()[2], getRotationVector()[3]);
 		
-		gl.glBegin(GL.GL_TRIANGLES);
-		
 		for(Triangle triangle: triangles){
 			triangle.render(gl);
 		}
-		gl.glEnd();
+		
 		for(DrawableNode child: children){
 			child.render(gl);
 		}
