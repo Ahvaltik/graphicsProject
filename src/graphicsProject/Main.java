@@ -17,7 +17,6 @@ public class Main{
 		final GameWorld gameWorld = new GameWorld();
 		GLProfile glp = GLProfile.getDefault();
 		GLCapabilities glc = new GLCapabilities(glp);
-		glc.setDepthBits(64);
 		GLCanvas canvas = new GLCanvas(glc);
 		Frame frame = new Frame("Dung");
 		frame.setSize(600, 600);
